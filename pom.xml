@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.gaple.cloud.skeleton</groupId>
+    <artifactId>maple-framework-cloud-skeleton</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>skeleton-api</module>
+        <module>skeleton-core</module>
+        <module>skeleton-server</module>
+        <module>skeleton-webapi</module>
+    </modules>
+
+    <!-- 统一管理jar包版本 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <leaf.framework.version>3.0.0-SNAPSHOT</leaf.framework.version>
+        <spring-boot.version>2.7.2</spring-boot.version>
+        <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+        <alibaba.nacos.version>2.1.1</alibaba.nacos.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringCloud 微服务 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringCloud Alibaba 微服务 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${alibaba.nacos.version}</version>
+            </dependency>
+
+            <!-- spring boot dependencies -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-framework</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-dubbo-nacos-sentinel</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-dubbo-nacos</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-datasource</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-datasource-mongodb</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-sso</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-shiro</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-redisson</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-rabbitmq</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-data-sync</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>leaf-base-extension</artifactId>
+                <version>${leaf.framework.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,6 @@
+redisson:
+  config:
+    singleServerConfig:
+      address: "redis://XXXXXX:6379"
+      password: XXXXX
+      database: 8

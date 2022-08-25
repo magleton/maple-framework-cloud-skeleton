@@ -1,0 +1,16 @@
+dynamic:
+  datasource:
+    framework:
+      driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+      url: jdbc:p6spy:mysql://XXXX:3306/tcm-dev?useSSL=false&useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false
+      #driver-class-name: com.mysql.jdbc.Driver
+      #url: jdbc:mysql://xx.xx.xx.xx:3306/xx?useSSL=false&useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false
+      username: XXX
+      password: XXXX
+    slave1:
+      driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+      url: jdbc:p6spy:mysql://XXXXX:3306/tcm-dev?useSSL=false&useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false
+        #driver-class-name: com.mysql.jdbc.Driver
+      #url: jdbc:mysql://xx.xx.xx.xx:3306/xx?useSSL=false&useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false
+      username: XXX
+      password: XXXXX

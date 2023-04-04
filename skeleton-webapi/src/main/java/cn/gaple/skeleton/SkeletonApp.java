@@ -20,6 +20,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableFeignClients
 public class SkeletonApp {
     public static void main(String[] args) {
+        System.setProperty("nacos.logging.default.config.enabled", "false");
         SpringApplication.run(SkeletonApp.class, args);
+        System.out.println("Maple Framework Skeleton APP模块启动成功");
     }
 }

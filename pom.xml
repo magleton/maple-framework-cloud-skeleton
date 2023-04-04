@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>cn.maple.framework</groupId>
+        <artifactId>maple-leaf-framework</artifactId>
+        <version>3.1.0-SNAPSHOT</version>
+    </parent>
+
     <groupId>cn.gaple.cloud.skeleton</groupId>
     <artifactId>maple-framework-cloud-skeleton</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -21,11 +27,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <leaf.framework.version>3.0.0-SNAPSHOT</leaf.framework.version>
-        <spring-boot.version>2.7.2</spring-boot.version>
-        <spring-cloud.version>2021.0.3</spring-cloud.version>
-        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
-        <alibaba.nacos.version>2.1.1</alibaba.nacos.version>
+        <leaf.framework.version>3.1.0-SNAPSHOT</leaf.framework.version>
+        <spring-cloud.version>2021.0.5</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
+        <alibaba.nacos.version>2.1.2</alibaba.nacos.version>
+        <spring-cloud-starter-openfeign.version>3.1.6</spring-cloud-starter-openfeign.version>
     </properties>
 
     <dependencyManagement>
@@ -35,6 +41,15 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring boot dependencies -->
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>maple-leaf-framework</artifactId>
+                <version>${leaf.framework.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -49,18 +64,33 @@
             </dependency>
 
             <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud-starter-openfeign.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-client</artifactId>
                 <version>${alibaba.nacos.version}</version>
-            </dependency>
-
-            <!-- spring boot dependencies -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
 
             <dependency>
@@ -68,6 +98,7 @@
                 <artifactId>leaf-base-framework</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-dubbo-nacos-sentinel</artifactId>
@@ -118,7 +149,6 @@
                 <artifactId>leaf-base-extension</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

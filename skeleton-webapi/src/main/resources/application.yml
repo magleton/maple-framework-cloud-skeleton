@@ -55,11 +55,17 @@ spring:
   cloud:
     nacos:
       discovery:
-        namespace: xxxxx
-        server-addr: xxxx:8848
+        namespace: XXXXX
+        server-addr: XXXXX
+        username: nacos
+        password: nacos
       config:
-        namespace: xxxx
-        server-addr: xxxx:8848
+        namespace: XXXXX
+        server-addr: XXXXX
+        username: nacos
+        password: nacos
+        import-check:
+          enabled: false
 
 
 #mybatis

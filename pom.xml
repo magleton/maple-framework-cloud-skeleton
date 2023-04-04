@@ -32,6 +32,7 @@
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
         <alibaba.nacos.version>2.1.2</alibaba.nacos.version>
         <spring-cloud-starter-openfeign.version>3.1.6</spring-cloud-starter-openfeign.version>
+        <spring-cloud-starter-loadbalancer.version>3.1.6</spring-cloud-starter-loadbalancer.version>
     </properties>
 
     <dependencyManagement>
@@ -79,6 +80,18 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${spring-cloud-starter-openfeign.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+                <version>${spring-cloud-starter-loadbalancer.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.springframework.boot</groupId>

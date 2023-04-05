@@ -55,17 +55,18 @@ spring:
   cloud:
     nacos:
       discovery:
-        namespace: XXXXX
-        server-addr: XXXXX
+        namespace: XXXX
+        server-addr: XXXX
         username: nacos
         password: nacos
       config:
-        namespace: XXXXX
-        server-addr: XXXXX
+        namespace: XXX
+        server-addr: XXXX
         username: nacos
         password: nacos
-        import-check:
-          enabled: false
+        refresh-enabled: true
+  config:
+    import: nacos:${spring.application.name}-${spring.profiles.active}.yaml
 
 
 #mybatis

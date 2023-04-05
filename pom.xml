@@ -45,20 +45,20 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- spring boot dependencies -->
-            <dependency>
-                <groupId>cn.maple.framework</groupId>
-                <artifactId>maple-leaf-framework</artifactId>
-                <version>${leaf.framework.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
             <!-- SpringCloud Alibaba 微服务 -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Maple framework dependencies -->
+            <dependency>
+                <groupId>cn.maple.framework</groupId>
+                <artifactId>maple-leaf-framework</artifactId>
+                <version>${leaf.framework.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -110,41 +110,49 @@
                 <artifactId>leaf-base-dubbo-nacos-sentinel</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-dubbo-nacos</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-datasource</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-datasource-mongodb</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-sso</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-redisson</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-rabbitmq</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-data-sync</artifactId>
                 <version>${leaf.framework.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>cn.maple.framework</groupId>
                 <artifactId>leaf-base-extension</artifactId>

@@ -55,19 +55,20 @@ spring:
   cloud:
     nacos:
       discovery:
-        namespace: XXXX
-        server-addr: XXXX
-        username: nacos
-        password: nacos
+        namespace: ${NACOS_NAMESPACE::7d8f0f5a-6a53-4785-9686-dd460158e5d4}
+        server-addr: ${NACOS_SERVER_ADDR:192.168.56.101:8848}
+        username: ${NACOS_USERNAME:nacos}
+        password: ${NACOS_USERNAME:nacos}
       config:
-        namespace: XXX
-        server-addr: XXXX
-        username: nacos
-        password: nacos
+        namespace: ${NACOS_NAMESPACE:7d8f0f5a-6a53-4785-9686-dd460158e5d4}
+        server-addr: ${NACOS_SERVER_ADDR:192.168.56.101:8848}
+        username: ${NACOS_USERNAME:nacos}
+        password: ${NACOS_USERNAME:nacos}
         refresh-enabled: true
   config:
-    import: nacos:${spring.application.name}-${spring.profiles.active}.yaml
-
+    import:
+      - nacos:${spring.application.name}-${spring.profiles.active}.yaml
+      - nacos:${spring.application.name}-${spring.profiles.active}.yml
 
 #mybatis
 mybatis-plus:

@@ -65,6 +65,7 @@ spring:
         username: ${NACOS_USERNAME:nacos}
         password: ${NACOS_USERNAME:nacos}
         refresh-enabled: true
+        group: SKELETON_GROUP
   config:
     import:
       - nacos:${spring.application.name}-${spring.profiles.active}.yaml

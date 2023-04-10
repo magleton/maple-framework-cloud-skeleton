@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>cn.gaple.cloud.skeleton</groupId>
-		<artifactId>maple-framework-cloud-skeleton</artifactId>
+        <artifactId>maple-framework-cloud-skeleton</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -12,10 +12,6 @@
     <artifactId>skeleton-core</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>cn.maple.framework</groupId>
-            <artifactId>leaf-base-framework</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
